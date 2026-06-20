@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './AppLayout.css';
 
@@ -7,7 +8,7 @@ function AppNav() {
       <div className="app-header-inner">
         <div className="app-brand-block">
           <NavLink to="/dashboard" className="app-brand">
-            StockFlow
+            Stockflow
           </NavLink>
           <p className="app-tagline">Inventory & order management</p>
         </div>
@@ -31,6 +32,10 @@ function AppNav() {
 }
 
 function AppLayout() {
+  useEffect(() => {
+    document.title = 'Stockflow';
+  }, []);
+
   return (
     <div className="app-layout">
       <AppNav />
